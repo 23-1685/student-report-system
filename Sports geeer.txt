@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sports Gear - </title>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Sports Gear</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="https://github.com/23-1685" target="_blank" rel="noopener noreferrer">My GitHub</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section id="products">
+        <article>
+            <h2>Featured Sports Product</h2>
+            <img src="https://via.placeholder.com/300x200?text=Sports+Shoes" alt="Image of sports shoes" />
+            <p>Check out our latest high-performance sports shoes designed for all athletes.</p>
+        </article>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We provide quality sports gear to help you perform at your best, whether you're a professional or just getting started.</p>
+    </section>
+
+    <aside>
+        <h3>Did You Know?</h3>
+        <p>Our sports shoes use the latest cushioning technology to reduce impact and improve comfort.</p>
+    </aside>
+</main>
+
+<footer>
+    <p>&copy; 2025 Sports Gear. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+
+
+
