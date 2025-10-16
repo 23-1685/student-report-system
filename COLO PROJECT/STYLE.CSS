@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Data Presentation Table</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* General Body and Font Styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            padding: 2rem;
+        }
+
+        /* Base Table Cell Styling */
+        .data-table th, .data-table td {
+            padding: 1rem;
+            border: 1px solid #e5e7eb; /* Light border for separation */
+        }
+
+        /* --- Column Styling using CSS nth-child selector (5 distinct formats) --- */
+
+        /* Column 1: Index/Neutral (Dark Gray Solid) */
+        .data-table th:nth-child(1), .data-table td:nth-child(1) {
+            background-color: #1f2937; /* Tailwind gray-800 */
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* Column 2: Soft Primary (Blue Solid) */
+        .data-table th:nth-child(2), .data-table td:nth-child(2) {
+            background-color: #bfdbfe; /* Tailwind blue-200 */
+            color: #1e40af; /* Darker blue text */
+        }
+
+        /* Column 3: Soft Secondary (Mint Green Solid) */
+        .data-table th:nth-child(3), .data-table td:nth-child(3) {
+            background-color: #d1fae5; /* Tailwind emerald-200 */
+            color: #065f46; /* Darker green text */
+        }
+
+        /* Column 4: Warning (Orange Gradient Format) */
+        .data-table th:nth-child(4), .data-table td:nth-child(4) {
+            /* Using a linear gradient for a different 'format' */
+            background: linear-gradient(90deg, #fcd34d 0%, #f97316 100%); /* Yellow to Orange */
+            color: #78350f; /* Dark brown text */
+            font-weight: 600;
+        }
+
+        /* Column 5: Accent (Purple Solid with distinct border format) */
+        .data-table th:nth-child(5), .data-table td:nth-child(5) {
+            background-color: #e9d5ff; /* Tailwind violet-200 */
+            color: #6d28d9; /* Darker violet text */
+            border-right: 4px solid #8b5cf6; /* Distinct border style/format */
+        }
+
+        /* --- Responsive Design for Small Screens (Turns table into stacked cards) --- */
+        @media (max-width: 640px) {
+            .data-table, .data-table thead, .data-table tbody, .data-table th, .data-table td, .data-table tr {
+                display: block;
+            }
+            /* Hide the table header completely on mobile */
+            .data-table thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            .data-table tr {
+                margin-bottom: 1rem;
+                border: 2px solid #e5e7eb;
+                border-radius: 0.5rem;
+                overflow: hidden;
+            }
+            .data-table td {
+                border: none;
+                border-bottom: 1px solid #e5e7eb;
+                position: relative;
+                padding-left: 50%;
+                text-align: right;
+            }
+            /* Use the column headers as content for the mobile labels */
+            .data-table td:before {
+                position: absolute;
+                left: 0.5rem;
+                width: 45%;
+                padding-right: 0.5rem;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: 700;
+                color: #4b5563;
+            }
+            .data-table td:nth-child(1):before { content: "Row Index"; }
+            .data-table td:nth-child(2):before { content: "Requirement"; }
+            .data-table td:nth-child(3):before { content: "Status"; }
+            .data-table td:nth-child(4):before { content: "Weighting"; }
+            .data-table td:nth-child(5):before { content: "Comments"; }
+        }
+
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center">
+
+    <header class="w-full max-w-4xl bg-white shadow-xl rounded-xl p-6 mb-8 border-t-4 border-indigo-500">
+        <h1 class="text-3xl font-extrabold text-gray-800 mb-2">Individual Presentation Data Tracker</h1>
+        <p class="text-lg text-gray-600 mb-4">
+            This table tracks the progress and details for your **Individual Presentation**.
+        </p>
+        <div class="flex flex-wrap justify-between items-center text-sm font-medium">
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full mr-2 my-1">
+                Total Marks: <span class="font-bold">10 Marks</span>
+            </span>
+            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full my-1">
+                Due: Before Class Starts!
+            </span>
+        </div>
+    </header>
+
+    <main class="w-full max-w-4xl bg-white shadow-xl rounded-xl overflow-hidden">
+        <table class="data-table w-full border-collapse text-left text-sm md:text-base">
+            <thead>
+                <tr class="uppercase text-xs tracking-wider">
+                    <th class="rounded-tl-xl">#</th>
+                    <th>Presentation Requirement</th>
+                    <th>Current Status</th>
+                    <th>Mark Weighting</th>
+                    <th class="rounded-tr-xl">Tutor Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Define Topic & Research Questions</td>
+                    <td>Completed (Draft 1 Ready)</td>
+                    <td>3/10 Marks</td>
+                    <td>Strong focus, but refine RQ clarity.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Develop Content Slides (Visuals & Data)</td>
+                    <td>In Progress (50% done)</td>
+                    <td>5/10 Marks</td>
+                    <td>Need to integrate more academic sources.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Rehearsal & Timing Practice</td>
+                    <td>To Start (0% done)</td>
+                    <td>2/10 Marks</td>
+                    <td>Schedule a dry run this weekend.</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+</body>
+</html>
